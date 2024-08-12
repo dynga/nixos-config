@@ -10,14 +10,18 @@
 
     # graphical programs
 
-    vivaldi
-    vivaldi-ffmpeg-codecs
+    firefox
     spotify
     obsidian
     vesktop
     signal-desktop
     prismlauncher
     steam
+    android-studio-stable
+    vscode
+    transmission-qt
+    gparted
+    gnome-disk-utility
   ];
 
   # This value determines the Home Manager release that your
