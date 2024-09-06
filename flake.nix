@@ -23,8 +23,8 @@
               useUserPackages = true;
               users = {
                 niko = {
-                  name = "Nikola Arlotti";
-                  home = /home/niko;
+#                   name = "Nikola Arlotti";
+#                   home = /home/niko;
                   imports = [ ./home-niko.nix ];
                   };
               };
@@ -46,13 +46,13 @@
               useUserPackages = true;
               users = {
                 niko = {
-                  name = "Second Cooler Nikola Arlotti";
-                  home = /home/niko;
+#                   name = "Second Cooler Nikola Arlotti";
+#                   home = /home/niko;
                   imports = [ ./home-niko.nix ];
                   };
                 narlotti = {
-                  name = "Nikola Arlotti";
-                  home = /home/narlotti;
+#                   name = "Nikola Arlotti";
+#                   home = /home/narlotti;
                   imports = [ ./home-narlotti.nix ];
                   };
               };
