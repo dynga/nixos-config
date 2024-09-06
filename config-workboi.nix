@@ -10,4 +10,22 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
+  users = {
+    users = {
+      narlotti = {
+        name = "Nikola Arlotti";
+        home = "/home/narlotti";
+        group = "users";
+        extraGroups = [ "wheel" "networkmanager" ];
+        isNormalUser = true;
+      };
+      niko = {
+        name = "Second Cooler Nikola Arlotti";
+        home = "/home/niko";
+        group = "users";
+        extraGroups = [ "wheel" "networkmanager" ];
+        isNormalUser = true;
+      };
+    };
+  };
 }

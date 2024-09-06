@@ -6,4 +6,17 @@
 
 {
   networking.hostName = "bigputer"; # Define your hostname.
+
+  users = {
+    users = {
+      niko = {
+        name = "Nikola Arlotti";
+        home = "/home/niko";
+        group = "users";
+        extraGroups = [ "wheel" "networkmanager" ];
+        isNormalUser = true;
+      };
+    };
+  };
+}
 }
