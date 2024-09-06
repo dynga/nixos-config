@@ -42,7 +42,7 @@
                 niko = import ./home-niko.nix;
                 narlotti = import ./home-narlotti.nix;
               };
-          }
+          };
         ];
       };
     };
