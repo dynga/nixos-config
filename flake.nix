@@ -45,16 +45,18 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users = {
-                niko = {
-                  name = "Second Cooler Nikola Arlotti";
-                  home = /home/niko;
-                  imports = [ ./home-niko.nix ];
-                  };
-                narlotti = {
-                  name = "Nikola Arlotti";
-                  home = /home/narlotti;
-                  imports = [ ./home-narlotti.nix ];
-                  };
+                niko = #{
+#                   name = "Second Cooler Nikola Arlotti";
+#                   home = /home/niko;
+#                   imports = [ ./home-niko.nix ];
+                    import ./home-niko.nix;
+                  #};
+                narlotti = #{
+#                   name = "Nikola Arlotti";
+#                   home = /home/narlotti;
+#                   imports = [ ./home-narlotti.nix ];
+                    import ./home-niko.nix;
+                  #};
               };
             };
           }
