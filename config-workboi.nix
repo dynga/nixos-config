@@ -13,14 +13,14 @@
   users = {
     users = {
       narlotti = {
-        name = "Nikola Arlotti";
+        name = "narlotti";
         home = "/home/narlotti";
         group = "users";
         extraGroups = [ "wheel" "networkmanager" ];
         isNormalUser = true;
       };
       niko = {
-        name = "Second Cooler Nikola Arlotti";
+        name = "niko";
         home = "/home/niko";
         group = "users";
         extraGroups = [ "wheel" "networkmanager" ];
