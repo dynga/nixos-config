@@ -43,7 +43,7 @@
                 narlotti = import ./home-narlotti.nix;
               };
             };
-          };
+          }
         ];
       };
     };
