@@ -31,6 +31,7 @@
           }
           disko.nixosModules.disko
           ./disk-config.nix;
+          };
         ];
       };
       workboi = nixpkgs.lib.nixosSystem {
