@@ -18,7 +18,7 @@
     prismlauncher
 
     # programming
-    android-studio-stable
+    android-studio
     vscode
   ];
 
