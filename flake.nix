@@ -22,8 +22,11 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users = {
-                niko = import ./home-niko.nix;
-              };
+                niko = {
+                  name = "Second Cooler Nikola Arlotti";
+                  home = "/home/niko";
+                  import ./home-niko.nix;
+                  };
             };
           }
           disko.nixosModules.disko
@@ -41,8 +44,16 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users = {
-                niko = import ./home-niko.nix;
-                narlotti = import ./home-narlotti.nix;
+                niko = {
+                  name = "Second Cooler Nikola Arlotti";
+                  home = "/home/niko";
+                  import ./home-niko.nix;
+                  };
+                narlotti = {
+                  name = "Nikola Arlotti";
+                  home = "/home/narlotti";
+                  import ./home-narlotti.nix;
+                  };
               };
             };
           }
