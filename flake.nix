@@ -55,7 +55,7 @@
 #                   name = "Nikola Arlotti";
 #                   home = /home/narlotti;
 #                   imports = [ ./home-narlotti.nix ];
-                    import ./home-niko.nix;
+                    import ./home-narlotti.nix;
                   #};
               };
             };
