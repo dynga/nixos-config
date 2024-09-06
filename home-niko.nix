@@ -13,9 +13,6 @@
     obsidian
     vesktop
     signal-desktop
-    transmission-qt
-    gparted
-    gnome-disk-utility
 
     # gaming
     prismlauncher
