@@ -27,11 +27,11 @@
                   home = "/home/niko";
                   imports = [ ./home-niko.nix ];
                   };
+              };
             };
           }
           disko.nixosModules.disko
           ./disk-config.nix;
-          };
         ];
       };
       workboi = nixpkgs.lib.nixosSystem {
