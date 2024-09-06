@@ -18,7 +18,6 @@
     prismlauncher
 
     # programming
-    android-studio
     vscode
   ];
 
