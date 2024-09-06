@@ -14,6 +14,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.useOSProber = true;
+  boot.runSize = "80%";
 
   # Enable networking
   networking.networkmanager.enable = true;
