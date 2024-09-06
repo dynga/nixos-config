@@ -25,7 +25,7 @@
                 niko = {
                   name = "Second Cooler Nikola Arlotti";
                   home = "/home/niko";
-                  import ./home-niko.nix;
+                  ./home-niko.nix;
                   };
             };
           }
@@ -47,12 +47,12 @@
                 niko = {
                   name = "Second Cooler Nikola Arlotti";
                   home = "/home/niko";
-                  import ./home-niko.nix;
+                  ./home-niko.nix;
                   };
                 narlotti = {
                   name = "Nikola Arlotti";
                   home = "/home/narlotti";
-                  import ./home-narlotti.nix;
+                  ./home-narlotti.nix;
                   };
               };
             };
