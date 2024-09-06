@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
- imports =
-   [ # Include the results of the hardware scan.
-     ./disk-config.nix
-   ];
+#  imports =
+#    [ # Include the results of the hardware scan.
+#      ./disk-config.nix
+#    ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
