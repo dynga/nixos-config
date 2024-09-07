@@ -29,7 +29,5 @@
     };
   };
 
-    programs = {
-      ./modules-gaming.nix
-    };
+    programs = import ./modules-gaming.nix;
 }
