@@ -17,5 +17,14 @@
       };
     };
   };
+
+    programs = {
+      firefox.enable = true;
+      steam.enable = true;
+    };
+    programs = {
+      gamemode.enable = true;
+      lutris.enable = true;
+    };
 }
 }

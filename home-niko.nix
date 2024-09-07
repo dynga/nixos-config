@@ -21,15 +21,6 @@
     vscode
   ];
 
-#   programs = {
-#     firefox.enable = true;
-#     steam.enable = true;
-#     gamemode.enable = true;
-#     lutris.enable = true;
-#
-#     fzf.enable = true;
-#   };
-
   home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself.
