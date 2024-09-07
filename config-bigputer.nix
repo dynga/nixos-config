@@ -10,9 +10,8 @@
   users = {
     users = {
       niko = {
-        name = "Nikola Arlotti";
+        description = "Nikola Arlotti";
         home = "/home/niko";
-        group = "users";
         extraGroups = [ "wheel" "networkmanager" ];
         isNormalUser = true;
       };
