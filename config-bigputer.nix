@@ -12,7 +12,7 @@
       niko = {
         description = "Nikola Arlotti";
         home = "/home/niko";
-        extraGroups = [ "wheel" "networkmanager" ];
+        extraGroups = [ "wheel" "networkmanager" "vboxusers"];
         isNormalUser = true;
         password = "changeme";
       };
