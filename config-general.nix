@@ -10,11 +10,22 @@
 #      ./disk-config.nix
 #    ];
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
-  boot.runSize = "80%";
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    device = "nodev";
+    useOSProber = true;
+    timeoutStyle = "hidden";
+    extraEntries = ''
+      menuentry "Reboot" {
+        reboot
+      }
+      menuentry "Poweroff" {
+        halt
+      }
+    ''
+  }
 
   # Enable networking
   networking.networkmanager.enable = true;
