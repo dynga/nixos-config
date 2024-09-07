@@ -24,8 +24,8 @@
       menuentry "Poweroff" {
         halt
       }
-    ''
-  }
+    '';
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
