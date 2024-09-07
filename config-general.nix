@@ -13,7 +13,6 @@
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
-    efiInstallAsRemovable = true;
     device = "nodev";
     useOSProber = true;
     timeoutStyle = "hidden";
@@ -26,8 +25,6 @@
       }
     '';
   };
-
-  boot.loader.efi.canTouchEfiVariables = false;
 
   # Enable networking
   networking.networkmanager.enable = true;
