@@ -16,6 +16,7 @@
 
     # gaming
     prismlauncher
+    lutris
 
     # programming
     vscode
