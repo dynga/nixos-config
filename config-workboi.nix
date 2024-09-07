@@ -15,15 +15,21 @@
       narlotti = {
         description = "Nikola Arlotti";
         home = "/home/narlotti";
+        password = "changeme"
         extraGroups = [ "wheel" "networkmanager" ];
         isNormalUser = true;
       };
       niko = {
         description = "Second Cooler Nikola Arlotti";
         home = "/home/niko";
+        password = "changeme"
         extraGroups = [ "wheel" "networkmanager" ];
         isNormalUser = true;
       };
     };
   };
+
+    programs = {
+      ./modules-gaming.nix
+    };
 }

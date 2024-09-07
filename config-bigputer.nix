@@ -14,17 +14,13 @@
         home = "/home/niko";
         extraGroups = [ "wheel" "networkmanager" ];
         isNormalUser = true;
+        password = "changeme";
       };
     };
   };
 
     programs = {
-      firefox.enable = true;
-      steam.enable = true;
-    };
-    programs = {
-      gamemode.enable = true;
-      lutris.enable = true;
+      ./modules-gaming.nix
     };
 }
 }
