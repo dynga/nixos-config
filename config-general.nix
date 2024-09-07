@@ -27,6 +27,8 @@
     '';
   };
 
+  boot.loader.efi.canTouchEfiVariables = false;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
