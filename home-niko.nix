@@ -29,7 +29,7 @@
         private = {
           name = "Private";
           id = 1;
-          isDefualt = false;
+          isDefualt = true;
           search.default = "DuckDuckGo";
           settings = {
             "extensions.autoDisableScopes" = 0;
