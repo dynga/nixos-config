@@ -5,10 +5,11 @@
 { config, pkgs, ... }:
 
 {
-#  imports =
-#    [ # Include the results of the hardware scan.
-#      ./disk-config.nix
-#    ];
+ imports =
+   [ # Include the results of the hardware scan.
+     ./hardware-configuration.nix
+   ];
+
 
   boot.loader.grub = {
     enable = true;
@@ -28,6 +29,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall.enable  = false;
 
   # Set your time zone.
   time.timeZone = "Europe/Prague";
@@ -71,25 +73,62 @@
     pulse.enable = true;
   };
 
+  hardware.bluetooth.enable = true;
+  services.ddccontrol.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    nano
-    wget
-    curl
-    dive
-    podman-tui
-    docker-compose
-  ];
+  services.gvfs.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.containers.enable = true;
+  services.flatpak.enable = true;
+  environment = {
+    systemPackages = with pkgs; [
+      git
+      gh
+      vim
+      nano
+      wget
+      curl
+      thefuck
+      fishPlugins.done
+      fishPlugins.fzf-fish
+      fishPlugins.forgit
+      dive
+      ntfs3g
+      cifs-utils
+      samba
+      podman-tui
+      docker-compose
+      htop
+      waypipe
+      wineWowPackages.stable
+      flatpak-builder
+      nix-output-monitor
+      aria2
+      lima
+      quickemu
+      quickgui
+      spice-gtk
+    ];
+    shellAliases = {
+      nixos-switch = "NIXPKGS_ALLOW_UNFREE=1 sudo nixos-rebuild switch --impure &| nom";
+      nixos-update = "NIXPKGS_ALLOW_UNFREE=1 sudo bash -lic 'cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --impure |& nom'";
+    };
+  };
+
+  home-manager.backupFileExtension = "backup";
+
+  programs.virt-manager.enable = true;
+
   virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+    virtualbox.host.enable = true;
+    containers.enable = true;
     podman = {
       enable = true;
       # Create a `docker` alias for podman, to use it as a drop-in replacement

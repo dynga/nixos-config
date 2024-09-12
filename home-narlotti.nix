@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, nur, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -12,11 +12,14 @@
     firefox
     obsidian
     signal-desktop
+    vlc
+    vivaldi
+    slack
 
     # programming
     jetbrains.idea-community
     vscode
-
+    deja-dup
     distrobox
   ];
 
@@ -27,16 +30,16 @@
         private = {
           name = "Private";
           id = 1;
-          isDefualt = false;
+          isDefault = false;
           search.default = "DuckDuckGo";
           settings = {
             "extensions.autoDisableScopes" = 0;
           };
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
             adnauseam
             bitwarden
             consent-o-matic
-            enchancer-for-youtube
+            # enhancer-for-youtube
             decentraleyes
             playback-speed
           ];
@@ -49,11 +52,11 @@
           settings = {
             "extensions.autoDisableScopes" = 0;
           };
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
             adnauseam
             bitwarden
             consent-o-matic
-            enchancer-for-youtube
+            # enhancer-for-youtube
             decentraleyes
             playback-speed
           ];
@@ -61,6 +64,10 @@
       };
     };
     fzf.enable = true;
+    nix-index = {
+        enable = true;
+        enableFishIntegration = true;
+      };
   };
 
   home.stateVersion = "24.05";

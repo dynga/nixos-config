@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
+  # imports = [ ./flake.nix flake-inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "niko";
@@ -8,18 +10,32 @@
 
   home.packages = with pkgs; [
 
-    # general programs
+    # graphical programs
+
+    firefox
     spotify
     obsidian
     vesktop
-    signal-desktop
-
-    # gaming
     prismlauncher
-    lutris
+    vivaldi
 
-    # programming
+    android-studio
     vscode
+
+    transmission-qt
+    gparted
+    lutris
+    libreoffice
+    deja-dup
+    vlc
+
+    gnome.gnome-disk-utility
+    kdePackages.filelight
+    kdePackages.kdeconnect-kde
+
+    #cli utilities
+
+    distrobox
   ];
 
   programs = {
@@ -29,24 +45,35 @@
         private = {
           name = "Private";
           id = 1;
-          isDefualt = true;
+          isDefault = true;
           search.default = "DuckDuckGo";
           settings = {
             "extensions.autoDisableScopes" = 0;
           };
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
             adnauseam
             bitwarden
             consent-o-matic
-            enchancer-for-youtube
+            # enhancer-for-youtube
             decentraleyes
             playback-speed
           ];
-        };;
+        };
       };
+      
     };
     fzf.enable = true;
+
+    fish = {
+      enable = true;
+    };
   };
+
+  nixpkgs.config.allowUnfree = true;
+
+  services.flatpak.packages = [
+    "org.signal.Signal"
+  ];
 
   home.stateVersion = "24.05";
 
