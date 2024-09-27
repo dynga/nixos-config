@@ -18,11 +18,13 @@
     vesktop
     prismlauncher
     vivaldi
+    obs-studio
 
     android-studio
     vscode
 
     transmission-qt
+    ventoy-full
     gparted
     lutris
     libreoffice
@@ -32,6 +34,7 @@
     gnome.gnome-disk-utility
     kdePackages.filelight
     kdePackages.kdeconnect-kde
+    kdePackages.kolourpaint
 
     #cli utilities
 

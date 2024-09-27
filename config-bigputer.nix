@@ -40,6 +40,7 @@
 
         packages = with pkgs; [
           davinci-resolve
+          logiops
         ];
       };
     };
@@ -47,7 +48,12 @@
 
     programs = {
       firefox.enable = true;
-      steam.enable = true;
+      steam = {
+        enable = true;
+        extraCompatPackages = with pkgs; [
+          proton-ge-bin
+        ];
+      };
       gamemode.enable = true;
 
       fish.enable = true;

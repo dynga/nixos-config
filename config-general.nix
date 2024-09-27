@@ -27,6 +27,8 @@
     '';
   };
 
+  boot.supportedFilesystems = ["nfts"];
+
   # Enable networking
   networking.networkmanager.enable = true;
   networking.firewall.enable  = false;
@@ -82,6 +84,8 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  security.polkit.enable = true;
+
   services.gvfs.enable = true;
 
   services.flatpak.enable = true;
@@ -98,14 +102,17 @@
       fishPlugins.fzf-fish
       fishPlugins.forgit
       dive
-      ntfs3g
       cifs-utils
       samba
+      rar
       podman-tui
       docker-compose
       htop
       waypipe
       wineWowPackages.stable
+      protonup-qt
+      winetricks
+      protontricks
       flatpak-builder
       nix-output-monitor
       aria2
@@ -113,6 +120,10 @@
       quickemu
       quickgui
       spice-gtk
+      mediainfo
+      xsettingsd
+      xorg.xrdb
+      ntfs3g
     ];
     shellAliases = {
       nixos-switch = "NIXPKGS_ALLOW_UNFREE=1 sudo nixos-rebuild switch --impure &| nom";
