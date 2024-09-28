@@ -13,7 +13,7 @@
    ];
 
   networking.hostName = "bigputer"; # Define your hostname.
-
+  xdg.portal.enable = true;
 
   # nur.nixosModules.nur
   # home-manager.nixosModules.home-manager

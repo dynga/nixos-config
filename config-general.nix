@@ -71,8 +71,7 @@
 
   services.gvfs.enable = true;
 
-  xdg.portal.enable = true;
-  services.flatpak.enable = true;
+
   environment = {
     systemPackages = with pkgs; [
       git
