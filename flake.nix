@@ -43,74 +43,33 @@
       nixosConfigurations = {
         bigputer = mkSystem ./hosts/bigputer {
           modules = [
-#             nur.nixosModules.nur
-#             home-manager.nixosModules.home-manager
-#             nix-flatpak.nixosModules.nix-flatpak
             ./config-general.nix
+            ./modules/grub-uefi.nix
             ./modules/drivers-nvidiagpu.nix
             ./modules/flatpak.nix
             ./modules/kde.nix
             ./modules/virtualisation.nix
             ./home/user-niko.nix
-            # {
-            #   home-manager = {
-            #     useGlobalPkgs = true;
-            #     useUserPackages = true;
-            #     extraSpecialArgs = { inherit inputs; };
-            #     users = {
-            #       niko.imports = [ 
-            #         ./users/home-niko.nix 
-            #         nix-flatpak.homeManagerModules.nix-flatpak
-            #       ];
-            #     };
-            #   };
-            # }
-  #           disko.nixosModules.disko
-  #           ./disk-config.nix
           ];
         };
         workboi = mkSystem ./hosts/workboi {
           modules = [
-#             nur.nixosModules.nur
-#             home-manager.nixosModules.home-manager
-#             nix-flatpak.nixosModules.nix-flatpak
             ./config-general.nix
             ./modules/flatpak.nix
             ./modules/kde.nix
             ./modules/virtualisation.nix
+            ./modules/grub-uefi.nix
             ./home/user-niko.nix
             ./home/user-narlotti.nix
             ];
-#         workboi = nixpkgs.lib.nixosSystem {
-#           system = "x86_64-linux";
-#           modules = [
-#             ./config-general.nix
-#             ./hosts/workboi
-#             nur.nixosModules.nur
-#             home-manager.nixosModules.home-manager
-#             nix-flatpak.nixosModules.nix-flatpak
-#             {
-#               home-manager = {
-#                 useGlobalPkgs = true;
-#                 useUserPackages = true;
-#                 extraSpecialArgs.flake-inputs = inputs;
-#                 users = {
-#                   niko.imports = [
-#                     ./users/home-niko.nix
-#                     nix-flatpak.homeManagerModules.nix-flatpak
-#                   ];
-#                   narlotti.imports = [
-#                     ./users/home-narlotti.nix
-#                     nix-flatpak.homeManagerModules.nix-flatpak
-#                   ];
-#                 };
-#               };
-#             }
-#   #           disko.nixosModules.disko
-#   #           ./disk-config.nix
-#           ];
-#         };
+          };
+        evergiven = mkSystem ./hosts/evergiven {
+          modules = [
+            ./config-general.nix
+            ./modules/containers.nix
+            # grub on mbr needs to be configured on a case-by-case basis
+          ];
+        };
       };
     };
-  };
-}
+  }

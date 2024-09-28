@@ -16,6 +16,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+  xdg.portal.enable = true;
 
   users = {
     users = {
