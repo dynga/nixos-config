@@ -2,9 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs,  ... }:
 
 {
+
+ imports =
+   [ # Include the results of the hardware scan.
+    inputs.nur.nixosModules.nur
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+   ];
   networking.hostName = "workboi"; # Define your hostname.
 
   # Enable touchpad support (enabled default in most desktopManager).

@@ -8,6 +8,7 @@
  imports =
    [ # Include the results of the hardware scan.
      ./hardware-configuration.nix
+     ./modules/containers.nix
    ];
 
 
@@ -32,6 +33,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.firewall.enable  = false;
+  services.tailscale.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Prague";
@@ -50,11 +52,6 @@
     LC_TELEPHONE = "cs_CZ.UTF-8";
     LC_TIME = "cs_CZ.UTF-8";
   };
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -88,6 +85,7 @@
 
   services.gvfs.enable = true;
 
+  xdg.portal.enable = true;
   services.flatpak.enable = true;
   environment = {
     systemPackages = with pkgs; [
@@ -101,12 +99,9 @@
       fishPlugins.done
       fishPlugins.fzf-fish
       fishPlugins.forgit
-      dive
       cifs-utils
       samba
       rar
-      podman-tui
-      docker-compose
       htop
       waypipe
       wineWowPackages.stable
@@ -124,7 +119,10 @@
       xsettingsd
       xorg.xrdb
       ntfs3g
+      inetutils
+      trayscale
     ];
+
     shellAliases = {
       nixos-switch = "NIXPKGS_ALLOW_UNFREE=1 sudo nixos-rebuild switch --impure &| nom";
       nixos-update = "NIXPKGS_ALLOW_UNFREE=1 sudo bash -lic 'cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --impure |& nom'";
@@ -133,21 +131,6 @@
 
   home-manager.backupFileExtension = "backup";
 
-  programs.virt-manager.enable = true;
-
-  virtualisation = {
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
-    virtualbox.host.enable = true;
-    containers.enable = true;
-    podman = {
-      enable = true;
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
 
   system.stateVersion = "24.05";
 

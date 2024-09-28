@@ -1,8 +1,13 @@
 { inputs, config, pkgs, nur, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+
+#       users = {
+            narlotti = {
   home.username = "narlotti";
   home.homeDirectory = "/home/narlotti";
 
@@ -74,4 +79,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+};
+};
+};
 }
