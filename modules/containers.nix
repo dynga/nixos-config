@@ -15,6 +15,7 @@
         dive
         podman-tui
         docker-compose
+        podman-compose
       ];
     };
 
