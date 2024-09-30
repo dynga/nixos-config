@@ -20,7 +20,7 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-  }
+  };
   networking.nftables.enable = true;
   services.tailscale.enable = true;
   services.openssh.enable = true;
