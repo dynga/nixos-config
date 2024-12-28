@@ -6,13 +6,9 @@
 
 {
  imports =
-   [ # Include the results of the hardware scan.
-     ./hardware-configuration.nix
+   [
      ./modules/containers.nix
    ];
-
-
-
 
   boot.supportedFilesystems = ["nfts"];
 
@@ -101,8 +97,6 @@
       nix-output-monitor
       aria2
       lima
-      quickemu
-      quickgui
       spice-gtk
       mediainfo
       xsettingsd
@@ -113,14 +107,13 @@
     ];
 
     shellAliases = {
-      nixos-switch = "NIXPKGS_ALLOW_UNFREE=1 sudo nixos-rebuild switch --impure &| nom";
-      nixos-update = "NIXPKGS_ALLOW_UNFREE=1 sudo bash -lic 'cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --impure |& nom'";
+      nixos-switch = "sudo nixos-rebuild switch &| nom";
+      nixos-update = "sudo bash -lic 'cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch |& nom'";
     };
   };
 
   home-manager.backupFileExtension = "backup";
 
-
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 
 }

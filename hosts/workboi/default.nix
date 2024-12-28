@@ -8,7 +8,6 @@
 
  imports =
    [ # Include the results of the hardware scan.
-    inputs.nur.nixosModules.nur
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-flatpak.nixosModules.nix-flatpak
    ];

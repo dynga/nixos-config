@@ -6,30 +6,14 @@
 
 {
  imports =
-   [ # Include the results of the hardware scan.
-    inputs.nur.nixosModules.nur
+   [
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-flatpak.nixosModules.nix-flatpak
+    ./hardware-configuration.nix
    ];
 
-  networking.hostName = "bigputer"; # Define your hostname.
+  networking.hostName = "bigputer";
   xdg.portal.enable = true;
-
-  # nur.nixosModules.nur
-  # home-manager.nixosModules.home-manager
-  # nix-flatpak.nixosModules.nix-flatpak
-  # home-manager = {
-  #   useGlobalPkgs = true;
-  #   useUserPackages = true;
-  #   users = {
-  #     niko.imports = [ 
-  #       ./users/home-niko.nix 
-  #       nix-flatpak.homeManagerModules.nix-flatpak
-  #     ];
-  #   };
-  # };
-
-
 
   users = {
     users = {
@@ -47,30 +31,26 @@
     };
   };
 
-    programs = {
-      firefox.enable = true;
-      steam = {
-        enable = true;
-        extraCompatPackages = with pkgs; [
-          proton-ge-bin
-        ];
-      };
-      gamemode.enable = true;
+  programs = {
+    firefox.enable = true;
+    steam = {
+      enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+    };
+    gamemode.enable = true;
 
-      fish.enable = true;
+    fish.enable = true;
 
-      bash = {
+    bash = {
       interactiveShellInit = ''
         if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
         then
           shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
           exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
         fi
-      '';
+        '';
     };
-
-
-    };
-
-
+  };
 }

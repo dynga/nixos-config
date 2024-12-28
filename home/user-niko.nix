@@ -1,45 +1,44 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, pkgs-unstable, ... }:
 
 {
-  # imports = [ ./flake.nix flake-inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-
-#       users = {
-            niko = {
+      niko = {
         home.username = "niko";
         home.homeDirectory = "/home/niko";
 
-        home.packages = with pkgs; [
+        home.packages = with pkgs-unstable; [
 
           # graphical programs
 
-          firefox
           spotify
           obsidian
-          vesktop
+          legcord
           prismlauncher
           vivaldi
           obs-studio
+#          signal-desktop
 
           android-studio
           vscode
 
-          transmission-qt
+          transmission_4-qt
           ventoy-full
           gparted
           lutris
           libreoffice
           deja-dup
           vlc
+          filezilla
 
-          gnome.gnome-disk-utility
+          gnome-disk-utility
           kdePackages.filelight
           kdePackages.kdeconnect-kde
           kdePackages.kolourpaint
+          kdePackages.kfind
 
           #cli utilities
 
@@ -47,7 +46,7 @@
         ];
 
 
-        home.stateVersion = "24.05";
+        home.stateVersion = "24.11";
 
         programs = {
           firefox = {
@@ -71,7 +70,6 @@
             #     ];
             #   };
             # };
-
           };
           fzf.enable = true;
           fish = {
@@ -82,11 +80,6 @@
       };
       };
     };
-#   };
-
-
-
-  nixpkgs.config.allowUnfree = true;
 
   services.flatpak.packages = [
     "org.signal.Signal"
