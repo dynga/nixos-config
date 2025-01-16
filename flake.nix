@@ -81,6 +81,13 @@
             # grub on mbr needs to be configured on a case-by-case basis
           ];
         };
+        tractor = mkSystem ./hosts/tractor {
+          modules = [
+            ./config-general.nix
+            ./modules/containers.nix
+            ./modules/grub-uefi.nix
+          ];
+        };
       };
     };
   }

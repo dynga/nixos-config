@@ -10,7 +10,7 @@
         home.username = "niko";
         home.homeDirectory = "/home/niko";
 
-        home.packages = with pkgs-unstable; [
+        home.packages = with pkgs; [
 
           # graphical programs
 
