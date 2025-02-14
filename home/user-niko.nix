@@ -20,7 +20,7 @@
           prismlauncher
           vivaldi
           obs-studio
-#          signal-desktop
+          gimp
 
           android-studio
           vscode

@@ -104,6 +104,8 @@
       ntfs3g
       inetutils
       trayscale
+      exiftool
+      qpdf
     ];
 
     shellAliases = {
