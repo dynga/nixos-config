@@ -5,10 +5,6 @@
 { config, pkgs, ... }:
 
 {
- imports =
-   [
-     ./modules/containers.nix
-   ];
 
   boot.supportedFilesystems = ["nfts"];
 
@@ -106,6 +102,7 @@
       trayscale
       exiftool
       qpdf
+      distrobox
     ];
 
     shellAliases = {

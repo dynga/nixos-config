@@ -5,6 +5,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "backup";
     users = {
       niko = {
         home.username = "niko";
@@ -39,10 +40,6 @@
           kdePackages.kdeconnect-kde
           kdePackages.kolourpaint
           kdePackages.kfind
-
-          #cli utilities
-
-          distrobox
         ];
 
 

@@ -31,6 +31,10 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    waydroid
+  ];
+
   programs = {
     firefox.enable = true;
     steam = {
@@ -53,4 +57,10 @@
         '';
     };
   };
+
+    virtualisation = {
+      podman = {
+        enable = true;
+      };
+    };
 }
