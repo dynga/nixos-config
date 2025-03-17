@@ -2,13 +2,22 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    disk = { 
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser.url = "github:oscilococcinum/zen-browser-nix";
   };
 
   outputs = inputs@{ 
@@ -17,6 +26,7 @@
     nix-flatpak, 
     home-manager, 
     disko, 
+    lix-module,
     ... }: 
 
   let 
@@ -26,6 +36,7 @@
         trusted-users = ["root" "@wheel"];
       };
     };
+    lix = lix-module.nixosModules.default;
     mkSystem = mainModule: {
       modules ? [],
       authorizedKeys ? {},
@@ -46,6 +57,7 @@
       modules = modules ++ [
         defaultConfig
         mainModule
+        lix
       ];
     };
 

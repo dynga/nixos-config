@@ -18,6 +18,8 @@
           spotify
           obsidian
           legcord
+          signal-desktop
+          signal-export
           prismlauncher
           vivaldi
           obs-studio
@@ -40,6 +42,8 @@
           kdePackages.kdeconnect-kde
           kdePackages.kolourpaint
           kdePackages.kfind
+          kdePackages.tokodon
+          kdePackages.qtmultimedia
         ];
 
 
@@ -77,8 +81,4 @@
       };
       };
     };
-
-  services.flatpak.packages = [
-    "org.signal.Signal"
-  ];
 }
