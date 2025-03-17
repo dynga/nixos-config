@@ -5,7 +5,6 @@
  imports =
    [ 
     inputs.home-manager.nixosModules.home-manager
-    inputs.nix-flatpak.nixosModules.nix-flatpak
     ./hardware-configuration.nix
    ];
 
@@ -37,19 +36,10 @@
     };
    };
 
-
-    boot.loader.grub = {
-        enable = true;
-        device = "/dev/vda";
-        extraEntries = ''
-        menuentry "Reboot" {
-            reboot
-        }
-        menuentry "Poweroff" {
-            halt
-        }
-        '';
-    };
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/vda";
+  };
 
   users = {
     users = {

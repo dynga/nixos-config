@@ -26,8 +26,6 @@
         packages = with pkgs; [
           davinci-resolve
           logiops
-          bash-language-server
-          python312Packages.python-lsp-server
           inputs.zen-browser.packages."${system}".default
         ];
       };

@@ -44,6 +44,10 @@
           kdePackages.kfind
           kdePackages.tokodon
           kdePackages.qtmultimedia
+
+          bash-language-server
+          python312Packages.python-lsp-server
+          jq
         ];
 
 
