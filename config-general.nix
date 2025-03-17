@@ -5,7 +5,6 @@
 { config, pkgs, ... }:
 
 {
-
   boot.supportedFilesystems = ["nfts"];
 
   # Enable networking
@@ -81,19 +80,11 @@
       fishPlugins.fzf-fish
       fishPlugins.forgit
       cifs-utils
-      samba
       rar
       htop
-      waypipe
-      wineWowPackages.stable
-      protonup-qt
-      winetricks
-      protontricks
-      flatpak-builder
       nix-output-monitor
       aria2
       lima
-      spice-gtk
       mediainfo
       xsettingsd
       xorg.xrdb
@@ -104,11 +95,6 @@
       qpdf
       distrobox
     ];
-
-    shellAliases = {
-      nixos-switch = "sudo nixos-rebuild switch &| nom";
-      nixos-update = "sudo bash -lic 'cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch |& nom'";
-    };
   };
 
   home-manager.backupFileExtension = "backup";

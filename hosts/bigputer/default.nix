@@ -36,6 +36,13 @@
 
   environment.systemPackages = with pkgs; [
     waydroid
+    waypipe
+    wineWowPackages.stable
+    protonup-qt
+    winetricks
+    protontricks
+    flatpak-builder
+    spice-gtk
   ];
 
   programs = {
