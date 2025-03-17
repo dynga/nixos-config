@@ -38,12 +38,15 @@
           filezilla
 
           gnome-disk-utility
+
           kdePackages.filelight
           kdePackages.kdeconnect-kde
           kdePackages.kolourpaint
           kdePackages.kfind
           kdePackages.tokodon
           kdePackages.qtmultimedia
+
+          # language servers
 
           bash-language-server
           python312Packages.python-lsp-server
@@ -76,12 +79,17 @@
             #   };
             # };
           };
+
           fzf.enable = true;
+
           fish = {
             enable = true;
           };
+
         };
+
         programs.home-manager.enable = true;
+        
       };
       };
     };
