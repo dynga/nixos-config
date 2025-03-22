@@ -75,17 +75,6 @@
             ./home/user-niko.nix
           ];
         };
-        workboi = mkSystem ./hosts/workboi {
-          modules = [
-            ./config-general.nix
-            ./modules/flatpak.nix
-            ./modules/kde.nix
-            ./modules/virtualisation.nix
-            ./modules/grub-uefi.nix
-            ./home/user-niko.nix
-            ./home/user-narlotti.nix
-            ];
-          };
         evergiven = mkSystem ./hosts/evergiven {
           modules = [
             ./config-general.nix

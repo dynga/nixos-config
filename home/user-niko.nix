@@ -15,27 +15,36 @@
 
           # graphical programs
 
+          inputs.zen-browser.packages."${system}".default
           spotify
           obsidian
           legcord
           signal-desktop
-          signal-export
           prismlauncher
           vivaldi
           obs-studio
           gimp
+          vlc
 
+          # creative
+
+          davinci-resolve
           android-studio
           vscode
+          libreoffice
+
+          # utilities
 
           transmission_4-qt
           ventoy-full
           gparted
           lutris
-          libreoffice
           deja-dup
-          vlc
           filezilla
+          logiops
+          signal-export
+
+          # Gnome/KDE
 
           gnome-disk-utility
 
@@ -51,11 +60,6 @@
           bash-language-server
           python312Packages.python-lsp-server
           jq
-
-
-          davinci-resolve
-          logiops
-          inputs.zen-browser.packages."${system}".default
         ];
 
 

@@ -22,10 +22,6 @@
         home = "/home/niko";
         extraGroups = [ "wheel" "networkmanager" "vboxusers"];
         isNormalUser = true;
-
-        # packages = with pkgs; [
-
-        # ];
       };
     };
   };

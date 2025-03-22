@@ -46,7 +46,7 @@
       suez = {
         description = "The Suez Canal";
         home = "/home/suez";
-        extraGroups = [ "wheel" "networkmanager" "vboxusers"];
+        extraGroups = [ "wheel" "networkmanager" "vboxusers" "docker"];
         isNormalUser = true;
       };
     };

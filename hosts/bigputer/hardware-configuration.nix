@@ -26,7 +26,7 @@
 
   swapDevices = [ 
     { device = "/dev/disk/by-uuid/7859ae25-c0f8-4b4a-91e7-8e0284d3ea4c"; } 
-    ];
+  ];
 
   # data_big
   fileSystems."/mnt/56807f9f-27d7-4cf0-8170-c980da6254ec" = {
