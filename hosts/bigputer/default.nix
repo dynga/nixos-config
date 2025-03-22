@@ -23,11 +23,9 @@
         extraGroups = [ "wheel" "networkmanager" "vboxusers"];
         isNormalUser = true;
 
-        packages = with pkgs; [
-          davinci-resolve
-          logiops
-          inputs.zen-browser.packages."${system}".default
-        ];
+        # packages = with pkgs; [
+
+        # ];
       };
     };
   };

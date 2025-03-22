@@ -51,6 +51,11 @@
           bash-language-server
           python312Packages.python-lsp-server
           jq
+
+
+          davinci-resolve
+          logiops
+          inputs.zen-browser.packages."${system}".default
         ];
 
 
