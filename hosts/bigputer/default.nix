@@ -26,16 +26,24 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    waydroid
-    waypipe
-    wineWowPackages.stable
-    protonup-qt
-    winetricks
-    protontricks
-    flatpak-builder
-    spice-gtk
-  ];
+  environment.systemPackages = 
+  
+    (with pkgs; [
+      waydroid
+      waypipe
+      wineWowPackages.stable
+      protonup-qt
+      winetricks
+      protontricks
+      flatpak-builder
+      spice-gtk
+    ])
+
+    ++
+
+    (with pkgs-unstable; [
+      deja-dup
+    ]);
 
   programs = {
     firefox.enable = true;
