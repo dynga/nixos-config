@@ -15,11 +15,11 @@
 
           # graphical programs
 
-          inputs.zen-browser.packages."${system}".default
           spotify
           obsidian
           legcord
           signal-desktop
+          element-desktop
           prismlauncher
           vivaldi
           obs-studio
@@ -60,6 +60,8 @@
           bash-language-server
           python312Packages.python-lsp-server
           jq
+          ruff
+          python3Full
         ];
 
         home.stateVersion = "24.11";

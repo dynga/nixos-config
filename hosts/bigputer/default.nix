@@ -37,6 +37,7 @@
       protontricks
       flatpak-builder
       spice-gtk
+      inputs.zen-browser.packages."${system}".default
     ])
 
     ++
