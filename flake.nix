@@ -82,7 +82,7 @@
             # grub on mbr needs to be configured on a case-by-case basis
           ];
         };
-        tractor = mkSystem ./hosts/tractor {
+        schenker = mkSystem ./hosts/schenker {
           modules = [
             ./config-general.nix
             ./modules/containers.nix
