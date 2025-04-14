@@ -38,7 +38,7 @@
 
   users = {
     users = {
-      d1 = {
+      schenker = {
         description = "Schenker's worst nightmare";
         home = "/home/schenker";
         extraGroups = [ "wheel" "networkmanager" "vboxusers" "docker"];
