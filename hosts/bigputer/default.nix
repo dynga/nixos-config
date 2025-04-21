@@ -8,6 +8,7 @@
  imports =
    [
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-flatpak.nixosModules.nix-flatpak
     ./hardware-configuration.nix
    ];
 
@@ -37,12 +38,14 @@
       flatpak-builder
       spice-gtk
       inputs.zen-browser.packages."${system}".default
+      nvtop
     ])
 
     ++
 
     (with pkgs-unstable; [
       deja-dup
+      kdePackages.kdenlive
     ]);
 
   programs = {

@@ -28,7 +28,7 @@
 
           # creative
 
-          davinci-resolve
+          # davinci-resolve
           android-studio
           vscode
           libreoffice
@@ -54,6 +54,7 @@
           kdePackages.kfind
           kdePackages.tokodon
           kdePackages.qtmultimedia
+          kdePackages.kdenlive
 
           # language servers
 
