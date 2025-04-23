@@ -8,7 +8,7 @@
  imports =
    [
     inputs.home-manager.nixosModules.home-manager
-    inputs.nix-flatpak.nixosModules.nix-flatpak
+#     inputs.nix-flatpak.nixosModules.nix-flatpak
     ./hardware-configuration.nix
    ];
 
@@ -38,7 +38,7 @@
       flatpak-builder
       spice-gtk
       inputs.zen-browser.packages."${system}".default
-      nvtop
+      nvtopPackages.full
     ])
 
     ++
@@ -70,6 +70,15 @@
         '';
     };
   };
+
+    services.flatpak.enable = true;
+    systemd.services.flatpak-repo = {
+      wantedBy = [ "multi-user.target" ];
+      path = [ pkgs.flatpak ];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      '';
+    };
 
     virtualisation = {
       podman = {

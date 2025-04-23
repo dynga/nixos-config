@@ -102,6 +102,7 @@
     options = "--delete-older-than 30d";
   };
 
+  nix.settings.download-buffer-size = 524288000;
 
   home-manager.backupFileExtension = "backup";
 
