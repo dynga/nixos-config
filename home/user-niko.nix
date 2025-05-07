@@ -11,7 +11,9 @@
         home.username = "niko";
         home.homeDirectory = "/home/niko";
 
-        home.packages = with pkgs; [
+        home.packages = 
+        
+        (with pkgs; [
 
           # graphical programs
 
@@ -23,7 +25,6 @@
           prismlauncher
           vivaldi
           obs-studio
-          gimp
           vlc
 
           # creative
@@ -39,7 +40,6 @@
           ventoy-full
           gparted
           lutris
-          deja-dup
           filezilla
           logiops
           signal-export
@@ -49,12 +49,10 @@
           gnome-disk-utility
 
           kdePackages.filelight
-          kdePackages.kdeconnect-kde
           kdePackages.kolourpaint
           kdePackages.kfind
           kdePackages.tokodon
           kdePackages.qtmultimedia
-          kdePackages.kdenlive
 
           # language servers
 
@@ -63,7 +61,16 @@
           jq
           ruff
           python3Full
-        ];
+
+          emacs
+        ]
+
+        ++
+
+        (with pkgs-unstable; [
+          gimp3
+        ])
+        );
 
         home.stateVersion = "24.11";
 

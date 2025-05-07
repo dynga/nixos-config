@@ -46,7 +46,8 @@
     (with pkgs-unstable; [
       deja-dup
       kdePackages.kdenlive
-    ]);
+    ])
+    ;
 
   programs = {
     firefox.enable = true;
@@ -57,6 +58,7 @@
       ];
     };
     gamemode.enable = true;
+    kdeconnect.enable = true;
 
     fish.enable = true;
 
