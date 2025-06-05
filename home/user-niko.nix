@@ -37,7 +37,7 @@
           # utilities
 
           transmission_4-qt
-          ventoy-full
+          # ventoy-full
           gparted
           lutris
           filezilla
@@ -61,8 +61,6 @@
           jq
           ruff
           python3Full
-
-          emacs
         ]
 
         ++
@@ -72,7 +70,7 @@
         ])
         );
 
-        home.stateVersion = "24.11";
+        home.stateVersion = "25.05";
 
         programs = {
           firefox = {
