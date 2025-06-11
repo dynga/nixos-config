@@ -39,6 +39,10 @@
       spice-gtk
       inputs.zen-browser.packages."${system}".default
       nvtopPackages.full
+      syncthing
+
+      kdePackages.krfb
+      kdePackages.krdc
     ])
 
     ++
@@ -81,6 +85,23 @@
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       '';
     };
+
+  services = {
+    xrdp = {
+      defaultWindowManager = "startplasma-x11";
+      enable = true;
+      openFirewall = true;
+    };
+
+    xserver = {
+      enable = true;
+
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+    };
+  };
 
     virtualisation = {
       podman = {
