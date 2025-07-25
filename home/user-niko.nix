@@ -5,7 +5,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "backup";
+    backupFileExtension = "bckp";
     users = {
       niko = {
         home.username = "niko";
@@ -53,6 +53,7 @@
           kdePackages.kfind
           kdePackages.tokodon
           kdePackages.qtmultimedia
+
 
           # language servers
 

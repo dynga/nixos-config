@@ -20,7 +20,7 @@
       niko = {
         description = "Nikola Arlotti";
         home = "/home/niko";
-        extraGroups = [ "wheel" "networkmanager" "vboxusers"];
+        extraGroups = [ "wheel" "networkmanager" "libvirtd"];
         isNormalUser = true;
       };
     };
@@ -43,6 +43,8 @@
 
       kdePackages.krfb
       kdePackages.krdc
+
+      android-tools
     ])
 
     ++

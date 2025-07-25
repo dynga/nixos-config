@@ -9,4 +9,7 @@
     spiceUSBRedirection.enable = true;
     containers.enable = true;
   };
+  networking.firewall.trustedInterfaces = [
+    "virbr0"
+  ];
 }

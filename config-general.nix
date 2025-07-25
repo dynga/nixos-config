@@ -103,10 +103,10 @@
       exiftool
       qpdf
       distrobox
+      dnsmasq
+      guestfs-tools
     ];
   };
-
-  home-manager.backupFileExtension = "backup";
 
   system.stateVersion = "25.05";
 
