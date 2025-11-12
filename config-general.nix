@@ -93,7 +93,6 @@
       htop
       nix-output-monitor
       aria2
-      lima
       mediainfo
       xsettingsd
       xorg.xrdb
