@@ -61,9 +61,9 @@
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   nix = {
+    package = pkgs.lixPackageSets.stable.lix;
     settings = {
       experimental-features = ["nix-command" "flakes"];
-      download-buffer-size = 524288000;
     };
     gc = {
       automatic = true;
@@ -105,6 +105,7 @@
       distrobox
       dnsmasq
       guestfs-tools
+      usbutils
     ];
   };
 

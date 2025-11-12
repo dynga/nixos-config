@@ -3,9 +3,9 @@
 {
   services.flatpak.enable = true;
 
-  services.flatpak.update.auto = {
-    enable = true;
-    onCalendar = "weekly";
-  };
+  # services.flatpak.update.auto = {
+  #   enable = true;
+  #   onCalendar = "weekly";
+  # };
 
 }

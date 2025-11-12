@@ -13,10 +13,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zen-browser.url = "github:oscilococcinum/zen-browser-nix";
   };
 
@@ -25,18 +21,10 @@
     nixpkgs-unstable, 
     # nix-flatpak, 
     home-manager, 
-    disko, 
-    lix-module,
+    disko,
     ... }: 
 
   let 
-    defaultConfig = {
-      nix.settings = {
-        experimental-features = ["nix-command" "flakes"];
-        trusted-users = ["root" "@wheel"];
-      };
-    };
-    lix = lix-module.nixosModules.default;
     mkSystem = mainModule: {
       modules ? [],
       authorizedKeys ? {},
@@ -55,9 +43,7 @@
         };
       };
       modules = modules ++ [
-        defaultConfig
         mainModule
-        lix
       ];
     };
 
@@ -69,9 +55,10 @@
             ./config-general.nix
             ./modules/grub-uefi.nix
             ./modules/drivers-nvidiagpu.nix
-#             ./modules/flatpak.nix
+            ./modules/flatpak.nix
             ./modules/kde.nix
             ./modules/virtualisation.nix
+            ./modules/vr.nix
             ./home/user-niko.nix
           ];
         };

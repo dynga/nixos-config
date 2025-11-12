@@ -73,6 +73,13 @@
 
         home.stateVersion = "25.05";
 
+        dconf.enable = true;
+        dconf.settings = {
+          "org/gnome/deja-dup" = {
+            delete-after = 30;
+          };
+        };
+
         programs = {
           firefox = {
             enable = true;
@@ -105,6 +112,8 @@
 
         };
 
+        xdg.configFile."openxr/1/active_runtime.json".source = "${pkgs.monado}/share/openxr/1/openxr_monado.json";
+        
         programs.home-manager.enable = true;
         
       };
