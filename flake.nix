@@ -58,7 +58,7 @@
             ./modules/flatpak.nix
             ./modules/kde.nix
             ./modules/virtualisation.nix
-            ./modules/vr.nix
+            # ./modules/vr.nix
             ./home/user-niko.nix
           ];
         };
@@ -66,7 +66,7 @@
           modules = [
             ./config-general.nix
             ./modules/containers.nix
-            # grub on mbr needs to be configured on a case-by-case basis
+            ./modules/grub-uefi.nix
           ];
         };
         schenker = mkSystem ./hosts/schenker {

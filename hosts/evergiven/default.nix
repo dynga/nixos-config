@@ -36,10 +36,7 @@
     };
    };
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/vda";
-  };
+  services.qemuGuest.enable = true;
 
   users = {
     users = {

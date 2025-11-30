@@ -7,6 +7,7 @@
     powerManagement.enable = true;
     open = false;
     nvidiaSettings = true;
+    videoAcceleration = true;
   };
 
   # Enable OpenGL
