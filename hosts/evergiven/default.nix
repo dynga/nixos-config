@@ -38,6 +38,23 @@
 
   services.qemuGuest.enable = true;
 
+  services.openssh = {
+    enable = true;
+    ports = [ 56 ];
+    settings = {
+      # PasswordAuthentication = false;
+      # KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "suez" ];
+    };
+  };
+
+  services.endlessh = {
+    enable = true;
+    port = 22;
+    openFirewall = true;
+  };
+
   users = {
     users = {
       suez = {
