@@ -41,6 +41,8 @@
       nvtopPackages.full
       syncthing
 
+      androidenv.androidPkgs.platform-tools
+
 
       kdePackages.krfb
       kdePackages.krdc
